@@ -1,9 +1,9 @@
 [BITS 64]
 
-	global strcmpo:function
+	global strcmp:function
 	section .text
 
-strcmpo:
+strcmp:
 	mov rcx, 0
 
 loop:
