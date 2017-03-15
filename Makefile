@@ -22,7 +22,7 @@ ASMFLAGS		=   -f elf64
 
 LDFLAGS			=	-shared
 
-RM				=	@rm -vf
+RM				=	@rm -vf -rf
 
 %.o : %.asm
 					@echo "Generation of the $@ file..."

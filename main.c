@@ -1,11 +1,15 @@
-extern int strncmpo(char *, char *, int);
-
-#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
-int main()
+int main ()
 {
-  int i;
-  i = strncmpo("test", "qqq", 2);
-  printf("%i\n", i);
+   const char str[] = "http://www.tutorialspoint.com";
+   const char ch = '.';
+   char *ret;
+
+   ret = strchr(str, ch);
+
+   printf("String after |%c| is - |%s|\n", ch, ret);
+
+   return(0);
 }
