@@ -6,6 +6,6 @@ extern int strncmpo(char *, char *, int);
 int main()
 {
   int i;
-  i = strncmpo("test", "tegst", 2);
+  i = strncmpo("test", "qqq", 2);
   printf("%i\n", i);
 }

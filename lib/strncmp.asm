@@ -1,28 +1,33 @@
 [BITS 64]
 
-	global strncmpo:function
+	global strncmp:function
 	section .text
 
-strncmpo:
+strncmp:
 	mov rcx, 0
 
 loop:
-	  mov r8, [rdi + rcx]
-		mov r9, [rsi + rcx]
-		cmp r8, 0
-		jz end
-		cmp r9, 0
-		jz end
+
+	  mov al, [rdi + rcx]
+		mov ah, [rsi + rcx]
+
+		cmp al, ah
+		jne end
+
+		cmp al, 0
+		je end
+
+		cmp ah, 0
+		je end
+
+		inc rcx
 
 		cmp rcx, rdx
-		je end
-		
-		cmp r8, r9
 		jz end
-		inc rcx
+
 	  jmp loop
 
 end:
-	sub r8,r9
-	mov rax, r8
+ 	sub al,ah
+	movsx rax, al
   ret
