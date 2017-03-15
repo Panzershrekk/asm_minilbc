@@ -1,4 +1,4 @@
-extern int strcmpo(char *, char *);
+extern int strncmpo(char *, char *, int);
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -6,12 +6,6 @@ extern int strcmpo(char *, char *);
 int main()
 {
   int i;
-  i = strcmpo("test", "test");
+  i = strncmpo("test", "tegst", 2);
   printf("%i\n", i);
-  if (i == 0)
-    printf("%s\n", "");
-  //printf("%i\n", strcmpo("test", "test"));
-  /*if (strcmpo("test", "test") == 0)
-    printf("%s\n", "ALAUKBAR");
-  //printf("%i\n", strleno("lol"));*/
 }

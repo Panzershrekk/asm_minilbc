@@ -4,28 +4,25 @@
 	section .text
 
 strncmpo:
-  mov	ebx,[esp+4]
-	mov eax,[esp+8]
-	mov	ecx,[esp+12]
-
-  mov edx,0
+	mov rcx, 0
 
 loop:
-	   cmp byte [ebx], 0x0
-	   jz end
+	  mov r8, [rdi + rcx]
+		mov r9, [rsi + rcx]
+		cmp r8, 0
+		jz end
+		cmp r9, 0
+		jz end
 
-		 cmp byte [eax], 0x0
-	   jz end
-
-		 cmp edx, ecx
-		 jz end
-
-		 cmp ebx, eax
-		 inc eax
-		 inc ebx
-		 inc edx
-	   jmp loop
+		cmp rcx, rdx
+		je end
+		
+		cmp r8, r9
+		jz end
+		inc rcx
+	  jmp loop
 
 end:
-	sub eax,ebx
+	sub r8,r9
+	mov rax, r8
   ret
