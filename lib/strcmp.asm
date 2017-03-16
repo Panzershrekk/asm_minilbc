@@ -23,8 +23,15 @@ loop:
 
 	  jmp loop
 
+return:
+	mov rax,1
+	ret
+
 end:
 	sub r8,r9
-	mov rax, r8
 
+	cmp r8,0
+	jnz return
+
+	mov rax,r8
   ret

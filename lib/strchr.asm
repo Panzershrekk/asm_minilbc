@@ -1,26 +1,24 @@
 [BITS 64]
 
 section .text
-	global strchro:function
+	global strchr:function
 
-strchro:
-  push r8
-  mov	r8,rsp
-
-  mov rcx,0
+strchr:
+  push rbp
+  mov	rbp,rsp
 
 loop:
-    cmp byte [rdi + rcx], 0
+    cmp byte [rdi], 0
     mov rax, 0
     jz end
 
-    cmp byte [rdi + rcx], cl
+    cmp byte [rdi], sil
     mov rax, rdi
     jz end
 
-   inc rcx
+   inc rdi
    jmp loop
 
 end:
-  pop r8
+  pop rbp
   ret
