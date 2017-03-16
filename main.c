@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
-extern char *strchro(const char *, char);
+extern char *rindexo(const char *, char);
 extern int strncmpo(char *, char *, int );
 
 int main ()
 {
-   /*const char str[] = "http://www.tutorialspoint.com";
-   const char ch = 'z';
+   const char str[] = "http://www.tutorialspoint.com";
+   const char ch = '\0';
    char *ret;
 
-   ret = strchr(str, ch);
+   ret = rindexo(str, ch);
 
-   printf("String after |%c| is - |%s|\n", ch, ret);*/
-   printf("%i\n", strncmp("toi", "toto", 3));
+   printf("String after |%c| is - |%s|\n", ch, ret);
+   //printf("%i\n", rindex("toi", "toto", 3));
    return(0);
 }

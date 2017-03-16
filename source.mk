@@ -13,4 +13,5 @@ SRC_DIR         =   ./lib/
 SRC_MINILIB_C   =   $(SRC_DIR)strlen.asm \
 										$(SRC_DIR)strcmp.asm \
 										$(SRC_DIR)strncmp.asm \
-										$(SRC_DIR)strchr.asm 
+										$(SRC_DIR)strchr.asm \
+										$(SRC_DIR)rindex.asm
