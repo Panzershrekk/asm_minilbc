@@ -7,7 +7,7 @@ extern int strncmpo(char *, char *, int );
 int main ()
 {
    const char str[] = "http://www.tutorialspoint.com";
-   const char ch = '\0';
+   const char ch = 't';
    char *ret;
 
    ret = rindexo(str, ch);

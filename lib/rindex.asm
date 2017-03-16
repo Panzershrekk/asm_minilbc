@@ -1,9 +1,9 @@
 [BITS 64]
 
 section .text
-	global rindexo:function
+	global rindex:function
 
-rindexo:
+rindex:
   push rbp
   mov	rbp,rsp
 	mov rax,0
