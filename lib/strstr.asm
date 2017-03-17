@@ -9,10 +9,11 @@ strstro:
   mov rcx, 0
 
 loop:
-	cmp byte [rdi], 0
-	jz end
 
-	cmp byte [rsi], 0
+  cmp byte [rsi], 0
+  jz end_rdi
+
+	cmp byte [rdi], 0
 	jz end
 
 	jmp check_str
@@ -50,6 +51,11 @@ inc_rdi:
   jmp check_str
 
 end_ok:
+  mov rax, rdi
+  pop rbp
+  ret
+
+end_rdi:
   mov rax, rdi
   pop rbp
   ret
