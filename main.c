@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
-extern char *rindexo(const char *, char);
-extern int strncmpo(char *, char *, int );
-
 int main ()
 {
-   const char str[] = "http://www.tutorialspoint.com";
-   const char ch = 't';
-   char *ret;
+   int len;
+   const char str1[] = "";
+   const char str2[] = "";
 
-   ret = rindexo(str, ch);
+   len = strcspno(str1, str2);
 
-   printf("String after |%c| is - |%s|\n", ch, ret);
-   //printf("%i\n", rindex("toi", "toto", 3));
+   printf("First matched character is at %d\n", len + 1);
+
    return(0);
 }
