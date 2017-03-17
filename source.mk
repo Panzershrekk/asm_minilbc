@@ -18,4 +18,5 @@ SRC_MINILIB_C   =   $(SRC_DIR)strlen.asm \
 										$(SRC_DIR)memset.asm \
 										$(SRC_DIR)memcpy.asm \
 										$(SRC_DIR)strpbrk.asm \
-										$(SRC_DIR)strcspn.asm
+										$(SRC_DIR)strcspn.asm \
+										$(SRC_DIR)strstr.asm
