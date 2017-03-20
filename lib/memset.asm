@@ -4,28 +4,16 @@ global memset:function
 section .text
 
 memset:
-  push rbp
-  mov rbp,rsp
-  mov rcx,1
+	mov rax, rsi
+	mov rcx, 0
 
 loop:
-
-  cmp rdx,0
-  jz end
-
-  cmp byte [rdi], 0
-  jz end
-
-  cmp byte [rdi], sil
-  mov [rdi], sil
-
-  cmp rcx,rdx
-  jz end
-
-  inc rcx
-  inc rdi
-  jmp loop
+	mov [rdi + rcx], rsi
+	inc rcx
+	cmp rcx, rdx
+	jz end
+	cmp rcx, rdx
+	jnz loop
 
 end:
-  pop rbp
-  ret
+	ret

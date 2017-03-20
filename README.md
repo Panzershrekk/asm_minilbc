@@ -10,6 +10,7 @@ Fonctions correctement implémentées :
 * strstr
 * strpbrk
 * strcspn
+* memset
 
 Fonctions en cours de développement :
 * strcmp
@@ -17,5 +18,4 @@ Fonctions en cours de développement :
 * strncmp
 
 Fonctions non implémentées:
-* memset
 * memmove

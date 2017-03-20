@@ -1,5 +1,4 @@
 [BITS 64]
-
 	global memcpy:function
 	section .text
 
