@@ -1,9 +1,9 @@
 [BITS 64]
 
-	global memcpyo:function
+	global memcpy:function
 	section .text
 
-memcpyo:
+memcpy:
 	mov rax, rdi
 	mov rcx, 0
 
