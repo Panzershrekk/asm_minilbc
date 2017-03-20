@@ -1,7 +1,7 @@
 [BITS 64]
 
-	global memset:function
-	section .text
+global memset:function
+section .text
 
 memset:
   push rbp

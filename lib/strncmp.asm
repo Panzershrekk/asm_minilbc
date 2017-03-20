@@ -8,24 +8,24 @@ strncmp:
 
 loop:
 
-	  mov al, [rdi + rcx]
-		mov ah, [rsi + rcx]
+	mov al, [rdi + rcx]
+	mov ah, [rsi + rcx]
 
-		cmp al, ah
-		jne end
+	cmp al, ah
+	jne end
 
-		cmp al, 0
-		je end
+	cmp al, 0
+	je end
 
-		cmp ah, 0
-		je end
+	cmp ah, 0
+	je end
 
-		inc rcx
+	inc rcx
 
-		cmp rcx, rdx
-		jz end
+	cmp rcx, rdx
+	jz end
 
-	  jmp loop
+	jmp loop
 
 end:
  	sub al,ah
