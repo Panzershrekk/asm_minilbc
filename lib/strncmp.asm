@@ -11,6 +11,9 @@ loop:
 	mov al, [rdi + rcx]
 	mov ah, [rsi + rcx]
 
+	cmp rdx, 0
+	jz ret_zero
+	
 	cmp al, ah
 	jne end
 
@@ -20,10 +23,10 @@ loop:
 	cmp ah, 0
 	je end
 
-	inc rcx
-
 	cmp rcx, rdx
 	jz end
+
+	inc rcx
 
 	jmp loop
 
@@ -31,3 +34,7 @@ end:
  	sub al,ah
 	movsx rax, al
   ret
+
+ret_zero:
+	mov rax, 0
+	ret
