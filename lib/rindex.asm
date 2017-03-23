@@ -9,17 +9,19 @@ rindex:
 	mov rax,0
 
 loop:
-		cmp byte [rdi], sil
-		jz last_occur
+	cmp byte [rdi], sil
+	jz last_occur
 
-    cmp byte [rdi], 0
-    jz end
+		cmp byte [rdi], 0
+		jz end
 
    inc rdi
    jmp loop
 
 last_occur:
 	mov rax, rdi
+	cmp byte [rdi], 0
+	je end
 	inc rdi
 	jmp loop
 
