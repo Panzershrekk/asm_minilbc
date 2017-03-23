@@ -4,6 +4,8 @@
 	section .text
 
 strncmp:
+	push rbp
+	mov rbp, rsp
 	mov rcx, 0
 
 loop:
@@ -13,7 +15,7 @@ loop:
 
 	cmp rdx, 0
 	jz ret_zero
-	
+
 	cmp al, ah
 	jne end
 
@@ -37,4 +39,5 @@ end:
 
 ret_zero:
 	mov rax, 0
+	pop rbp
 	ret
