@@ -7,31 +7,32 @@ strcmp:
 	mov rcx, 0
 
 loop:
-	mov r8, [rdi + rcx]
-	mov r9, [rsi + rcx]
-
-	cmp r8, 0
-	jz end
-
-	cmp r9, 0
-	jz end
-
-	cmp r8, r9
-	jz end
-
+	mov al, [rsi + rcx]
+	mov ah, [rdi + rcx]
+	cmp al, 0
+	je end
+	cmp ah, 0
+	je end
+	cmp al, ah
+	jg return_m_one
+	cmp al, ah
+	jl return_one
 	inc rcx
-
 	jmp loop
 
-return:
+return_one:
 	mov rax,1
 	ret
 
+return_m_one:
+	mov rax, -1
+	ret
+
 end:
-	sub r8,r9
-
-	cmp r8,0
-	jnz return
-
-	mov rax,r8
+	sub al,ah
+	cmp al, ah
+	jg return_m_one
+	cmp al, ah
+	jl return_one
+	mov rax, 0
 	ret
