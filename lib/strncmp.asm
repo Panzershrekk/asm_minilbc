@@ -1,43 +1,37 @@
 [BITS 64]
 
+section .text
 	global strncmp:function
-	section .text
 
 strncmp:
-	push rbp
-	mov rbp, rsp
 	mov rcx, 0
 
 loop:
-
+    cmp rcx, rdx
+    jz end_ok
 	mov al, [rdi + rcx]
 	mov ah, [rsi + rcx]
-
-	cmp rdx, 0
-	jz ret_zero
-
-	cmp al, ah
-	jne end
-
 	cmp al, 0
 	je end
-
 	cmp ah, 0
 	je end
-
-	cmp rcx, rdx
-	jz end
-
+	cmp al, ah
+	jne return_sub
 	inc rcx
-
 	jmp loop
 
-end:
- 	sub al,ah
-	movsx rax, al
-  ret
+return_sub:
+	sub al, ah
+    movsx rax, al
+    ret
 
-ret_zero:
+end:
+	sub al,ah
+	cmp al, ah
+	jne return_sub
 	mov rax, 0
-	pop rbp
 	ret
+
+end_ok:
+    mov rax, 0
+    ret
