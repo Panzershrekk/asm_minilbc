@@ -6,6 +6,7 @@ section	.text
 strlen:
   push	r8
   mov	r8,rsp
+	mov rcx,0
 
 loop:
    cmp	byte [rdi + rcx], 0
