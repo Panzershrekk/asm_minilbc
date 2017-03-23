@@ -1,9 +1,9 @@
 [BITS 64]
 
-	global strstro:function
+	global strstr:function
 	section .text
 
-strstro:
+strstr:
 	push rbp
 	mov rbp, rsp
   mov rcx, 0

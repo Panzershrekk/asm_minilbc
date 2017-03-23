@@ -1,9 +1,9 @@
 [BITS 64]
 
-	global strcspno:function
+	global strcspn:function
 	section .text
 
-strcspno:
+strcspn:
 	push rbp
 	mov rbp, rsp
 	mov rdx, rdi
